@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ForexInformation
+  datasource:
+    url: jdbc:mysql://localhost:3306/forex?useSSL=false&serverTimezone=UTC
+    username: root
+    password: Aa19372846a
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create  # 根据需要修改，例如 update, validate, create-drop
+      transaction:
+        jta:
+          platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
+    show-sql: true  # 如果需要显示SQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
